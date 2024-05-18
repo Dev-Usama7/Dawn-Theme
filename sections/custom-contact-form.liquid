@@ -1,6 +1,41 @@
+<h2>contact</h2>
+
+
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
-  }
-{% endschema %}
+  "name": "custom contact form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Accordain",
+      "type": "accordain",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "contact form"
+    }
+  ]
+}  
+{% endschema %}   
