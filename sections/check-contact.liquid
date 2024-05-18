@@ -1,12 +1,15 @@
 
-<h2>usama</h2>
+<h2>custom form</h2>
 
 
 {% schema %}
 {
   "name": "check contact",
   "tag": "section",
-  "class": "section"
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
   "settings": [
     {
       "type": "inline_richtext",
