@@ -1,0 +1,109 @@
+  <div class="check_gallery-section">
+      <div class="gallery-tab">
+        <div class="left_side">
+          <div class="left-side_up">
+            <div class="left-side_up-first">      <img src="{{ section.settings.first_image | img_url: 'master' }}" alt=""> </div>
+            <div class="left-side_up-second" style="background-image: url({{ section.settings.second_background_image | img_url: 'master' }})">
+              <div class="left-side_up-second-content">
+              <h2>{{ section.settings.second_heading }}</h2>
+                <p>{{ section.settings.second_content }} </p>
+              </div>
+            </div>
+          </div>
+          <div class="left-side_down">
+            <div class="left-side_down-first" style="background-image: url({{ section.settings.third_background_image | img_url: 'master' }})">
+              <div class="left-side_down-first-content">
+                <h2>{{ section.settings.third_heading }} </h2>
+                <p>{{ section.settings.third_content }}</p>
+              </div>
+
+            </div>
+            <div class="left-side_down-second">
+               <div class="left-side_down-second-content">
+                <img src="{{ section.settings.product_image | img_url: 'master' }}" alt=""> 
+                 <p>{{ section.settings.product_discription }} </p>
+                 <button>{{ section.settings.product_button_text }} </button>        
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right_side">
+          <div class="right_side-image">
+              <img src="{{ section.settings.right_side_image | img_url: 'master' }}" alt=""> 
+          </div>
+        </div>
+        </div>
+      </div>
+ 
+
+
+
+{% schema %}
+  {
+  "name": "bottles occasion",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "first_image",
+      "label": "first Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "second_background_image",
+      "label": "Second background image"
+    },
+    {
+      "type": "text",
+      "id": "second_heading",
+      "label": "Second heading",
+      "default": "Dummy text"
+    },
+    {
+      "type": "text",
+      "id": "second_content",
+      "label": "second Content"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_background_image",
+      "label": "third background image"
+    },
+    {
+      "type": "text",
+      "id": "third_heading",
+      "label": "third heading"
+    },
+    {
+      "type": "text",
+      "id": "third_content",
+      "label": "third content"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "product image"
+    },
+    {
+      "type": "text",
+      "id": "product_discription",
+      "label": "product discription",
+      "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      "type": "text",
+      "id": "product_button_text",
+      "label": "Product button text"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_side_image",
+      "label": "right side image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bottles occasion"
+    }
+  ]
+}  
+{% endschema %}

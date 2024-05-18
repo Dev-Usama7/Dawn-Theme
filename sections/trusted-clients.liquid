@@ -1,0 +1,48 @@
+    <section class="trusted_clients" style="{{ section.settings.color_0 }} ">
+        <div class="clients_Set">
+            <h1>{{ section.settings.heading }} </h1>
+            <ul>
+              {%- for block in section.blocks -%}
+                <li><a href="">  <img src="{{ block.settings.logo| img_url: 'master' }}" /></a></li>
+                {%- endfor -%}
+            </ul>
+        </div>
+    </section>
+
+{% schema %}
+  {
+  "name": "trusted clients",
+  "settings": [
+    {
+      "type": "color",
+      "label": "Color 0",
+      "id": "color_0"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "heading"
+    }
+   
+
+  ],
+  "blocks": [
+    {
+      "name": "Brand Images",
+      "type": "brand_images",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Trusted Clients"
+    }
+  ]
+}  
+{% endschema %}

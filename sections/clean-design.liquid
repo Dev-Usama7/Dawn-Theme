@@ -1,0 +1,66 @@
+
+    <section class="clean_design" style="background-image: url('{{ section.settings.image_picker_5 | img_url: 'master' }}');">
+      <div class="clean_design-content">
+        <h1>{{ section.settings.heading }}  </h1>
+        <p>{{ section.settings.content }} </p>
+        <div class="clean_list">
+            <ul>
+                <li><a href=""><img  src="https://cdn.shopify.com/s/files/1/0600/1498/5351/files/waterproof_invert.png?v=1715668816" alt="" ><span>{{ section.settings.item_text }} </span></a></li>
+                <li><a href=""><img class="without_hover"  src="https://cdn.shopify.com/s/files/1/0600/1498/5351/files/bulletproof-1.png?v=1715668815" alt=""><img class="with_hover" src="https://cdn.shopify.com/s/files/1/0600/1498/5351/files/bulletproof_invert.png?v=1715668815" alt=""><span>{{ section.settings.item_text_3 }} </span></a></li>
+                <li><a href=""><img class="without_hover"  src="https://cdn.shopify.com/s/files/1/0600/1498/5351/files/fireproof.png?v=1715668815" alt=""><img class="with_hover" src="https://cdn.shopify.com/s/files/1/0600/1498/5351/files/fireproof_invert.png?v=1715668815" alt=""><span>{{ section.settings.item_text_4 }} </span></a></li>
+            </ul>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+{% schema %}
+  {
+  "name": "clean design",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Content",
+      "default": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "
+    },
+    {
+      "type": "text",
+      "id": "item_text",
+      "label": "item text",
+      "default": "item text"
+    },
+    {
+      "type": "text",
+      "id": "item_text_3",
+      "label": "item text 3",
+      "default": "item text"
+    },
+    {
+      "type": "text",
+      "id": "item_text_4",
+      "label": "item text 4",
+      "default": "item text"
+    },
+        {
+    "type": "image_picker",
+      "label": "Background Image",
+      "id": "image_picker_5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Clean design"
+    }
+  ]
+}  
+{% endschema %}

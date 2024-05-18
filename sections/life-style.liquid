@@ -1,0 +1,103 @@
+   <div class="series">
+        <div class="series_content">
+            <div class="series_heading">
+             <h1>{{ section.settings.heading }} </h1>
+            </div>
+            <div class="series_carousel ">
+               <div class="series_carousel-set owl-carousel owl-theme">
+                 {%- for block in section.blocks -%}
+                  <div class="series_carousel-set-item">
+                  <img src="{{ block.settings.image | img_url: 'master' }}" />
+                      <p>{{ block.settings.carousel_text }} </p>
+                 </div> 
+                 {%- endfor -%}
+               </div>
+            </div>
+          <div class="Shop_now-button">
+              <button>      {{ section.settings.button_text }} </button>
+         </div>
+      </div>
+  </div>
+  
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+    <script>
+$(document).ready(function(){
+    $(".series_carousel-set").owlCarousel({
+        loop:true,
+        center:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:3,
+               slideBy: 1
+            }
+        },
+        nav: true, // Enable navigation arrows
+        navText: [
+            "<span class='prev'></span>",
+            "<span class='next'></span>"
+        ], // Custom navigation icons
+        autoHeight: true, // Set adaptive height
+        onInitialized: function(event) {
+            // Reset carousel position to start from the first item
+            $(event.target).trigger('to.owl.carousel', [1, 0]);
+            
+            // Adjust the translation manually
+            $('.owl-stage').css('transform', 'translate3d(0px, 0px, 0px)');
+        }
+    });
+});
+
+    </script>
+
+
+
+{% schema %}
+  {
+  "name": "life style",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        }
+  ],
+  "blocks": [
+    {
+      "name": "carousel block",
+      "type": "carousel_block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "carousel_text",
+          "label": "Carousel Text"
+        }
+    
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Carousel"
+    }
+  ]
+}  
+{% endschema %}

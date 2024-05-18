@@ -1,0 +1,146 @@
+
+
+   <section class="custom_announcement-bar" style="background-color: {{ section.settings.bd-color }}">
+       <div class="check-bar">
+        <div class="left-side"><p>{{ section.settings.bar_text }}  <a href="">{{ section.settings.bar_link-text }} </a></p></div>
+        <div class="right-side">
+            <div class="support">
+                <div class="icon-with-text"><span> <img src="{{ section.settings.first_image| img_url: 'master' }}" alt="">{{ section.settings.support }} </span>
+                    <div class="sub-position">
+                <div class="  sub-suport">
+                    <h6>{{ section.settings.need_help }} </h6>
+                    <span>{{ section.settings.help_disc }} <a href="{{ section.settings.link }}">{{ section.settings.link }} </a></span>
+                </div>
+                <div class="  sub-suport">
+                    <h6>{{ section.settings.need_help-2 }}</h6>
+                    <span>{{ section.settings.help_disc-3 }}</span>
+                </div>
+                <div class="  sub-suport">
+                    <a href="">{{ section.settings.need_help-3 }}</a>
+                    <p>{{ section.settings.help_disc-2 }}</p>
+                </div>
+                <div class="  sub-suport">
+                    <h6>Helpful Links</h6>
+                    <ul>
+                      {%- for block in section.blocks -%}
+                        <li><a href=""> {{ block.settings.link_text }} </a></li>
+                      {%- endfor -%}
+                    </ul>
+                     
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="our_garrente">
+                <span><img src="{{ section.settings.second_image | img_url: 'master' }}" alt=""><a href="">{{ section.settings.gurrante }} </a>
+                </span>
+            </div>
+            <div class="country">
+             <img src="{{ section.settings.country | img_url: 'master' }}" alt="">
+            </div>
+        </div>
+       </div>
+    </section>
+
+
+
+{% schema %}
+  {
+  "name": "custom announcement bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "bar_text",
+      "label": "bar text"
+    },
+       {
+      "type": "color",
+      "id": "bd-color",
+      "label": "Bar backgorund color"
+    },
+        {
+      "type": "text",
+      "id": "bar_link-text",
+      "label": "bar link text"
+    },
+    {
+      "type": "image_picker",
+      "id": "first_image",
+      "label": "first image"
+    },
+    {
+      "type": "text",
+      "id": "support",
+      "label": "support"
+    },
+    {
+      "type": "image_picker",
+      "id": "second_image",
+      "label": "second image"
+    },
+    {
+      "type": "text",
+      "id": "gurrante",
+      "label": "gurrante"
+    },
+    {
+      "type": "image_picker",
+      "id": "country",
+      "label": "country"
+    },
+    {
+      "type": "text",
+      "id": "need_help",
+      "label": "need help"
+    },
+        {
+      "type": "text",
+      "id": "need_help-2",
+      "label": "Live Chat Hours:"
+    },
+          {
+      "type": "text",
+      "id": "need_help-3",
+      "label": "email"
+    },
+    {
+      "type": "text",
+      "id": "help_disc",
+      "label": "help disc"
+    },
+       {
+      "type": "text",
+      "id": "help_disc-2",
+      "label": "We do our very"
+    },
+           {
+      "type": "text",
+      "id": "help_disc-3",
+      "label": "We do our very"
+    },
+    {
+      "type": "text",
+      "id": "link",
+      "label": "link"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "helpfull links",
+      "type": "helpfull_links",
+      "settings": [
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "link text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "custom announcement bar"
+    }
+  ]
+}  
+{% endschema %}
